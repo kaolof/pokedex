@@ -1,0 +1,19 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+.header{
+    display: flex;
+    justify-content:space-between;
+    /*background-color: brown;*/
+}
+
+.header > .end{
+    display: flex;
+    
+}
+
+.header > .end > a{
+    margin-right: 1em;
+}

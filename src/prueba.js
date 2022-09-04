@@ -22,10 +22,7 @@ window
         const abilities= document.createElement('ul');
         //let abilitiesArray=[];
         data.abilities.forEach(item=>{
-            let li=document.createElement('li');
-            //let litText=document.createTextNode(ability.name)
-            li.textContent=item.ability.name;
-
+            let li=document
             abilities.append(li)
         });
         
