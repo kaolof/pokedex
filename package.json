@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/kaolof/pokedex/issues"
   },
-  "homepage": "https://github.com/kaolof/pokedex#readme"
+  "homepage": "https://github.com/kaolof/pokedex#readme",
+  "dependencies": {
+    "bootstrap": "^5.2.0"
+  }
 }

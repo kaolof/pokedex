@@ -1,6 +1,5 @@
 const baseUrl="https://pokeapi.co/api/v2/pokemon";
-
-const appNode= document.querySelector('#app');
+const appNode= document.querySelector('#cards-container');
 
 window
     .fetch(`${baseUrl}/8`)
