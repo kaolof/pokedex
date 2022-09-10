@@ -32,11 +32,13 @@ body{
 
 
 .header > .brand{
+    font-size: 1.7rem;
     margin-left: 1%;
     font-weight: bold;
 }
 
 .header > .end{
+    font-size: 1.3rem;
     display: flex;
     padding: 0 10px 0 10px;
     
@@ -52,6 +54,86 @@ body{
 .header > .end > a:hover{
     color:#31a7f1;
 }
+
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+    width: 100vw;
+}
+
+#previus-button, #next-button{
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+/*cards*/
+#cards-container{
+    display: grid;
+    grid-template-columns:  290px 290px 290px;
+    grid-template-rows: 200px 200px 200px;
+    column-gap: 20px;
+    row-gap: 5px;
+    margin-top: 10px;
+    justify-content: center;
+
+}
+
+.card-pokemon{
+    width: auto;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+
+}
+
+.block.wrapper>*{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+.card-pokemon>img{
+    width: 120px;   
+}
+.card-pokemon>p{
+    margin: 0;
+}
+.card-pokemon>h2{
+    font-size: 1rem;
+    text-transform: capitalize;
+    font-weight: bold;
+    margin: 0;
+}
+
+/*flip-card*/
+.flip-card:hover .card-pokemon {
+    transform: rotateY(180deg);
+  }
+
+.card-pokemon,.card-pokemon-back {
+    backface-visibility: hidden;
+  }
+
+.card-pokemon-back {
+    margin-top:15% ;
+    transform: rotateY(180deg);
+    position: absolute;
+    top: 0%;
+  }
+
+  .stat-container {
+    display: grid;
+    align-items: center;
+    grid-template-columns: 1fr 2fr;
+    column-gap: 20px;
+    text-align: left;
+  }
+
+  .stat-container>p{
+    font-size: 1.1rem;
+    margin: 0;
+  }
 
 @media screen and (max-width: 450px) {
     .header{
