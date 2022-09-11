@@ -135,7 +135,7 @@ body{
     margin: 0;
   }
 
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 560px) {
     .header{
         font-size: 0.8rem;
         height: 40px;
@@ -159,5 +159,42 @@ body{
         font-weight: bold;
         padding: 0 10px 0 10px;
     }
+
+    #cards-container{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        width: 70%;
+    
+    }
+    
+    .card-pokemon{
+        width: auto;
+        transition: transform 0.8s;
+        transform-style: preserve-3d;
+        
+    
+    }
+    
+    .block.wrapper>*{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        
+    }
+    
+    .card-pokemon>img{
+        width: 120px;   
+    }
+    .card-pokemon>p{
+        margin: 10px;
+        font-size: 1.5rem;
+    }
+    .card-pokemon>h2{
+        margin: 10px;
+        font-size: 1.5rem;
+        text-transform: capitalize;
+    }
+    
     
 }
