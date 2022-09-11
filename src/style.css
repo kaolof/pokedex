@@ -55,6 +55,7 @@ body{
 .header > .end{
     font-size: 1.3rem;
     display: flex;
+    align-items: center;
     padding: 0 10px 0 10px;
     
 }
@@ -64,10 +65,20 @@ body{
     font-weight: bold;
     padding: 0 10px 0 10px;
     color: black;
+    
 }
 
 .header > .end > a:hover{
     color:#31a7f1;
+    
+}
+
+.search{
+    font-size: 1rem;
+}
+
+.searchButton{
+    font-size: 1rem;
 }
 
 .container{
@@ -154,7 +165,7 @@ body{
     display: none;
   }
 
-@media screen and (max-width: 560px) {
+@media screen and (max-width: 760px) {
 
     .header{
         font-size: 0.8rem;
@@ -172,11 +183,41 @@ body{
         padding-right: 10px;
     }
     
+    .btn-menu:hover{
+        color:#31a7f1;
+    }
     .header > .end{
-        display: none;
-        
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background:#2f3640;
+        height: 100%;
+        padding: 50px 30px;
+        opacity: 1;
+        z-index: 2;
+        transform: translateX(-400px);
+        transition: transform .4s ease-in-out;
+    }
+    .header > .end.show{
+        transform: translate(-20px);
+        transition: transform .5s ease-in-out;
+    }
+    .header>.end>a{
+        color: white;
+        padding: 10px;
+        text-align: left;
+    }
+    .search{
+        font-size: 1rem;
     }
     
+    .searchButton{
+        font-size: 1rem;
+    }
+
     .container{
         display: flex;
         flex-direction: column;
@@ -222,4 +263,36 @@ body{
         font-size: 1.5rem;
         font-weight: bold;
     }
+}
+
+@media screen and (max-width: 390px){
+    #cards-container{
+        justify-content: center;
+        flex-direction: column;
+        width: 80%;
+    
+    }
+    .card-pokemon{
+
+    }
+    .card-pokemon>img{
+        width: 100px;
+    }
+    .card-pokemon>p{
+        margin-bottom: 10px;
+        font-size: 1rem;
+    }
+
+    .card-pokemon>h2{
+        margin-bottom:10px;
+        font-size: 1rem;
+        text-transform: capitalize;
+    }
+    .card-pokemon-back {
+        margin-top:22% ;
+    }
+    .stat-container>p{
+        font-size: 0.9rem;
+      }
+
 }
