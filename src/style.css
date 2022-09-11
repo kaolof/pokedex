@@ -6,11 +6,13 @@ gris */
 
 *{
     font-family: system-ui, sans-serif;
+    margin: 0;
+    padding: 0;
+
 }
 
 body{
-    margin: 0;
-    padding: 0;
+    
     background-color: #ce1131;
     width: 100vw;
     height: 100vh;
@@ -22,7 +24,8 @@ body{
 }
 .header{
     display: flex;
-    justify-content:space-around;
+    justify-content:space-between;
+    padding: 10px;
     align-items: center;
     background-color: white ;
     font-size: 1.4rem;
@@ -30,7 +33,10 @@ body{
     height: 50px;
 }
 
-
+/*Button MENU*/
+.btn-menu{
+    display:none;
+}
 .header > .brand{
     display: flex;
     align-items: center;
@@ -69,12 +75,12 @@ body{
     align-items: center;
     justify-content: center;
     margin-top: 10px;
-    width: 90vw;
 }
 
-#previus-button, #next-button{
+.previus-button, .next-button{
     font-size: 1.3rem;
     font-weight: bold;
+    width: 3rem;
 }
 /*cards*/
 #cards-container{
@@ -149,33 +155,33 @@ body{
   }
 
 @media screen and (max-width: 560px) {
+
     .header{
         font-size: 0.8rem;
         height: 40px;
+        display: flex;
+        justify-content: space-between;
+        padding:20px;
+        
     }
     
     
-    .header > .brand{
-        margin-left: 2%;
-        font-weight: bold;
+    .btn-menu{
+        display: block;
+        font-size: 1.5rem;
+        padding-right: 10px;
     }
     
     .header > .end{
-        display: flex;
-        justify-content: space-between;
-        padding: 0 5px 0 10px;
+        display: none;
         
     }
-    /*quitar pronto*/
-    .header > .end > a{
-        text-decoration: none;
-        font-weight: bold;
-        padding: 0 10px 0 10px;
-    }
+    
     .container{
         display: flex;
         flex-direction: column;
     }
+    
     #cards-container{
         display: flex;
         justify-content: center;
@@ -183,29 +189,12 @@ body{
         width: 60%;
     
     }
-    
-    .card-pokemon{
-        width: auto;
-        transition: transform 0.8s;
-        transform-style: preserve-3d;
-        
-    
-    }
-    
-    .block.wrapper>*{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        
-    }
-    
-    .card-pokemon>img{
-        width: 120px;   
-    }
+
     .card-pokemon>p{
         margin-bottom: 10px;
         font-size: 1.5rem;
     }
+
     .card-pokemon>h2{
         margin-bottom:10px;
         font-size: 1.5rem;
@@ -215,9 +204,11 @@ body{
     .card-pokemon-back {
         margin-top:20% ;
     }
+    
     .container>.big{
         display: none;
     }
+    
     .button-box-small{
         display: block;
     }

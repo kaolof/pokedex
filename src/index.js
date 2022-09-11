@@ -87,26 +87,28 @@ function removeChildNodes(parent) {
     }
   }
 
-previusButton=document.querySelector('.previus-button');
-previusButton.addEventListener('click', ()=>{
+previus=()=>{
     if (offset>1){
         offset-=9;
         removeChildNodes(cardsContainer);
         fetchPokemons(offset,limit);
     }
-    
-})
+}
 
-nextButton=document.querySelector('.next-button');
-
-nextButton.addEventListener('click',()=>{
+next=()=>{
     offset+=9;
-    console.log('hola')
     removeChildNodes(cardsContainer);
     fetchPokemons(offset,limit);
+}
 
-})
+previusButton=document.querySelector('.previus-button');
+previusButtonSmallScreen=document.querySelector('.previus-button-small');
+previusButton.addEventListener('click', previus);
+previusButtonSmallScreen.addEventListener('click', previus);
 
-
+nextButton=document.querySelector('.next-button');
+nextButtonSmallScreen=document.querySelector('.next-button-small');
+nextButton.addEventListener('click',next);
+nextButtonSmallScreen.addEventListener('click',next);
 
 fetchPokemons(offset,limit);
