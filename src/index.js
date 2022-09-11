@@ -76,12 +76,8 @@ function fetchPokemon (data){
 }
 
 fetchPokemons= (offset,limit)=>{
-    console.log(offset);
-    console.log(limit);
     for(let i=offset; i<=offset+limit; i++){
         fetchPokemon(i)
-        
-        
     }
 }
 
@@ -91,7 +87,7 @@ function removeChildNodes(parent) {
     }
   }
 
-previusButton=document.querySelector('#previus-button');
+previusButton=document.querySelector('.previus-button');
 previusButton.addEventListener('click', ()=>{
     if (offset>1){
         offset-=9;
@@ -101,10 +97,11 @@ previusButton.addEventListener('click', ()=>{
     
 })
 
-nextButton=document.querySelector('#next-button');
+nextButton=document.querySelector('.next-button');
 
 nextButton.addEventListener('click',()=>{
     offset+=9;
+    console.log('hola')
     removeChildNodes(cardsContainer);
     fetchPokemons(offset,limit);
 

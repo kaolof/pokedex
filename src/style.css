@@ -22,7 +22,7 @@ body{
 }
 .header{
     display: flex;
-    justify-content:space-between;
+    justify-content:space-around;
     align-items: center;
     background-color: white ;
     font-size: 1.4rem;
@@ -32,11 +32,20 @@ body{
 
 
 .header > .brand{
-    font-size: 1.7rem;
-    margin-left: 1%;
+    display: flex;
+    align-items: center;
+}
+
+.header>.brand>h1{
+    font-size: 1.5rem;
+    padding-right: 10px;
+    margin: 0;
     font-weight: bold;
 }
 
+.header > .brand> img{
+    width: 35px;
+}
 .header > .end{
     font-size: 1.3rem;
     display: flex;
@@ -60,7 +69,7 @@ body{
     align-items: center;
     justify-content: center;
     margin-top: 10px;
-    width: 100vw;
+    width: 90vw;
 }
 
 #previus-button, #next-button{
@@ -135,6 +144,10 @@ body{
     margin: 0;
   }
 
+  .button-box-small{
+    display: none;
+  }
+
 @media screen and (max-width: 560px) {
     .header{
         font-size: 0.8rem;
@@ -143,7 +156,7 @@ body{
     
     
     .header > .brand{
-        margin-left: 1%;
+        margin-left: 2%;
         font-weight: bold;
     }
     
@@ -159,12 +172,15 @@ body{
         font-weight: bold;
         padding: 0 10px 0 10px;
     }
-
+    .container{
+        display: flex;
+        flex-direction: column;
+    }
     #cards-container{
         display: flex;
         justify-content: center;
         flex-direction: column;
-        width: 70%;
+        width: 60%;
     
     }
     
@@ -187,14 +203,32 @@ body{
         width: 120px;   
     }
     .card-pokemon>p{
-        margin: 10px;
+        margin-bottom: 10px;
         font-size: 1.5rem;
     }
     .card-pokemon>h2{
-        margin: 10px;
+        margin-bottom:10px;
         font-size: 1.5rem;
         text-transform: capitalize;
     }
     
-    
+    .card-pokemon-back {
+        margin-top:20% ;
+    }
+    .container>.big{
+        display: none;
+    }
+    .button-box-small{
+        display: block;
+    }
+
+    .button-box-small{
+        width: 50%;
+        display: flex;
+        justify-content: space-between;
+    }
+    .button-box-small>button{
+        font-size: 1.5rem;
+        font-weight: bold;
+    }
 }
