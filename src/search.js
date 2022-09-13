@@ -1,17 +1,20 @@
-const baseUrl="https://pokeapi.co/api/v2/pokemon";
-const cardsContainer= document.querySelector('#cards-container');
+//Search function
 
+const search= document.querySelector('#search-input');
+const searchButton =document.querySelector('.searchButton');
+const container=document.querySelector('.container');
+const cardsCont=document.querySelector('#cards-container');
+const back=document.createElement('button');
+back.classList.add("accent" ,"block");
+back.textContent="Go Back";
 
-let offset=1;
-let limit=8;
-
-function createCard(pokemon){
+function createCardSearch(pokemon){
     
     const flipCard=document.createElement('div');
     flipCard.classList.add('wrapper','block','flip-card')
 
     const card=document.createElement('div');
-    card.classList.add('card-pokemon');
+    card.classList.add('card-pokemon','card-search');
     
     const image=document.createElement('img');
     image.src=pokemon.sprites.front_default;
@@ -25,11 +28,12 @@ function createCard(pokemon){
     const cardBack = document.createElement("div");
     cardBack.classList.add("card-pokemon-back");
 
+    
     cardBack.append(progressBars(pokemon.stats))
     card.append(image,id,name, cardBack);
     flipCard.appendChild(card)
-    cardsContainer.appendChild(flipCard);
-
+    cardsCont.append(flipCard,back);
+    container.appendChild(cardsCont);
 }
 
 function progressBars(stats) {
@@ -68,49 +72,24 @@ function progressBars(stats) {
     return statsContainer;
   }
 
-function fetchPokemon (data){
+function fetchPokemonSearch (data){
     window.fetch(`${baseUrl}/${data}`)
         .then(response=> response.json())
         .then((pokemon)=>{
-            createCard(pokemon);
+            createCardSearch(pokemon);
         })
         .catch(err=>console.log(err))
 }
 
-fetchPokemons= (offset,limit)=>{
-    for(let i=offset; i<=offset+limit; i++){
-        fetchPokemon(i)
-    }
-}
+searchButton.addEventListener('click', ()=>{
+    removeChildNodes(container);
+    removeChildNodes(cardsCont);
+    fetchPokemonSearch(search.value);
+    cardsCont.classList.add('search');
 
-function removeChildNodes(parent) {
-    while (parent.firstChild) {
-      parent.removeChild(parent.firstChild);
-    }
-  }
-//previus and next function for big and small sreem
-previus=()=>{
-    if (offset>1){
-        offset-=9;
-        removeChildNodes(cardsContainer);
-        fetchPokemons(offset,limit);
-    }
-}
+    
+});
 
-next=()=>{
-    offset+=9;
-    removeChildNodes(cardsContainer);
-    fetchPokemons(offset,limit);
-}
-
-previusButton=document.querySelector('.previus-button');
-previusButtonSmallScreen=document.querySelector('.previus-button-small');
-previusButton.addEventListener('click', previus);
-previusButtonSmallScreen.addEventListener('click', previus);
-
-nextButton=document.querySelector('.next-button');
-nextButtonSmallScreen=document.querySelector('.next-button-small');
-nextButton.addEventListener('click',next);
-nextButtonSmallScreen.addEventListener('click',next);
-
-fetchPokemons(offset,limit);
+back.addEventListener('click',()=>{
+    window.location.href ="index.html";
+})
